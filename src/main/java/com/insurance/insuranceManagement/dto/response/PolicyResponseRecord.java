@@ -1,4 +1,4 @@
 package com.insurance.insuranceManagement.dto.response;
 
-public class ClaimResponseDto {
+public record PolicyResponseRecord() {
 }
