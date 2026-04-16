@@ -1,0 +1,12 @@
+package com.insurance.insuranceManagement.exception;
+
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@ResponseStatus(HttpStatus.CONFLICT)
+public class DuplicateResourceException extends RuntimeException {
+
+    public DuplicateResourceException(String resourceName, String fieldName, Object fieldValue) {
+        super(String.format("%s existe déjà avec %s : '%s'", resourceName, fieldName, fieldValue));
+    }
+}

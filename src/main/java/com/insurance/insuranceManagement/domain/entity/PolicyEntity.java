@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,10 +39,10 @@ public class PolicyEntity extends BaseEntity {
     private PolicyStatus status = PolicyStatus.PENDING;
 
     @Column(name = "start_date")
-    private LocalDateTime startDate;
+    private LocalDate startDate;
 
     @Column(name = "end_date")
-    private LocalDateTime endDate;
+    private LocalDate endDate;
 
     @Column(name = "premium_amount", nullable = false, precision = 15, scale = 2)
     private BigDecimal premiumAmount;
@@ -62,11 +62,11 @@ public class PolicyEntity extends BaseEntity {
 
     public boolean isActive() {
 
-        return PolicyStatus.ACTIVE.equals(this.status) && !LocalDateTime.now().isAfter(this.endDate) && !LocalDateTime.now().isBefore(this.startDate);
+        return PolicyStatus.ACTIVE.equals(this.status) && !LocalDate.now().isAfter(this.endDate) && !LocalDate.now().isBefore(this.startDate);
     }
 
     public boolean isExpired() {
 
-        return LocalDateTime.now().isAfter(this.endDate);
+        return LocalDate.now().isAfter(this.endDate);
     }
 }

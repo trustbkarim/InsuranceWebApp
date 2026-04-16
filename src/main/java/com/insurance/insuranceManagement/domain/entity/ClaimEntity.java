@@ -28,7 +28,7 @@ public class ClaimEntity extends BaseEntity {
     private ClaimStatus status = ClaimStatus.SUBMITTED;
 
     @Column(name = "incident_date")
-    private LocalDateTime incidentDate;;
+    private LocalDateTime incidentDate;
 
     @Column(name = "description")
     private String description;

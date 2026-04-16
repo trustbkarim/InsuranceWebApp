@@ -1,4 +1,18 @@
 package com.insurance.insuranceManagement.exception;
 
-public class BusinessException {
+import lombok.Getter;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.ResponseStatus;
+
+@Getter
+@ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+public class BusinessException extends RuntimeException{
+
+    private final String errorCode;
+
+    public BusinessException(String errorCode, String message) {
+        super(message);
+        this.errorCode = errorCode;
+    }
+
 }
