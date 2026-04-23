@@ -51,7 +51,7 @@ public class CustomerEntity extends BaseEntity {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PolicyEntity> policies = new ArrayList<>();
 
-    // méthode utilitaire
+    // util method
     public String getFullName() {
         return firstName + " " + lastname;
     }
