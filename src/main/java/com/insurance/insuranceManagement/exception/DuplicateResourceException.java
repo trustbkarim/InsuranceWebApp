@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 public class DuplicateResourceException extends RuntimeException {
 
     public DuplicateResourceException(String resourceName, String fieldName, Object fieldValue) {
-        super(String.format("%s existe déjà avec %s : '%s'", resourceName, fieldName, fieldValue));
+        super(String.format("%s already exists with %s : '%s'", resourceName, fieldName, fieldValue));
     }
 }

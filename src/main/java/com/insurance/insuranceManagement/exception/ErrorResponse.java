@@ -10,6 +10,6 @@ import java.util.Map;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public record ErrorResponse(LocalDateTime timestamp, int status, String error, String message, String path, String errorCode,
 
-                            // Utilisé uniquement pour les erreurs de validation (@Valid)
+                            // Only for validation error (@Valid)
                             Map<String, String> validationErrors) {
 }
