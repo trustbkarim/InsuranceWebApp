@@ -24,7 +24,7 @@ public class CustomerEntity extends BaseEntity {
     private Long id;
 
     @Column(name = "first_name", nullable = false, length = 100)
-    private String firstName;
+    private String firstname;
 
     @Column(name = "last_name", nullable = false, length = 100)
     private String lastname;
@@ -51,8 +51,8 @@ public class CustomerEntity extends BaseEntity {
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<PolicyEntity> policies = new ArrayList<>();
 
-    // méthode utilitaire
+    // util method
     public String getFullName() {
-        return firstName + " " + lastname;
+        return firstname + " " + lastname;
     }
 }
